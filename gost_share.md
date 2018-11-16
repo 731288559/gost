@@ -2,9 +2,11 @@
 gost -L=tcp://:9010/192.168.1.99:8000 [-F=...]
 - 将本地TCP端口9010上的数据(通过代理链)转发到192.168.1.99:8000上。
 
+
 ## 远程端口转发：内网穿透，科学上网
-A -> C                                  False
-A -> B , B -> C  ==>  A -> gost -> C    True
+- A -> C                                  False
+- A -> B , B -> C  ==>  A -> gost -> C    True
+
 
 #### server:
 gost -L=socks5://xiaoheihe:123456@:1234
@@ -17,7 +19,7 @@ gost -L=rtcp://:9016/202.118.65.2:80 -F=socks5://xiaoheihe:123456@192.168.1.99:1
 curl 192.168.1.99:9016/app/login.html;JSESSIONID=6122c867-5487-430f-b654-7f3d311f1108
 
 
-url: http://202.118.65.2:80/app/login.html;JSESSIONID=6122c867-5487-430f-b654-7f3d311f1108
+url:http://202.118.65.2:80/app/login.html;JSESSIONID=6122c867-5487-430f-b654-7f3d311f1108
 
 ---
 
