@@ -40,7 +40,8 @@ url: http://202.118.65.2:80/app/login.html
 ```gost -L=:9014 -F=192.168.1.99:9015 -F=192.168.1.99:9016```
 
 #### host
-```curl http://202.118.65.2:80/app/login.html -x "192.168.1.99:9014"
+```
+curl http://202.118.65.2:80/app/login.html -x "192.168.1.99:9014"
 // export http_proxy=http://192.168.1.99:9014
 // curl www.baidu.com
 ```
@@ -53,9 +54,9 @@ url: http://202.118.65.2:80/app/login.html
 
 
 
-- gost -L=xxx -F=xxx -F=xxx
-- read param, -F/L/D -> options, routes=[options1, options2]
-- ```
+- 1.gost -L=xxx -F=xxx -F=xxx
+- 2.read param, -F/L/D -> options, routes=[options1, options2]
+- 3. ```
     for route in routes:
         route.serve():
             chain = initChain():[chainNode1, chainNode2, ...]
