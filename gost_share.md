@@ -16,7 +16,8 @@ A -> B , B -> C  ==>  A -> gost -> C    True
 #### proxy           172.17.0.4
 ```gost -L=socks5://forward:222222@:1234```
 #### gost
-```gost -L=rtcp://:9017/202.118.65.2:80 
+```
+    gost -L=rtcp://:9017/202.118.65.2:80 
     -F=socks5://forward:222222@172.17.0.4:1234
     -F=socks5://xiaoheihe:111111@192.168.1.99:1234
 ```
@@ -39,9 +40,10 @@ url: http://202.118.65.2:80/app/login.html
 ```gost -L=:9014 -F=192.168.1.99:9015 -F=192.168.1.99:9016```
 
 #### host
-```curl http://202.118.65.2:80/app/login.html -x "192.168.1.99:9014"```
+```curl http://202.118.65.2:80/app/login.html -x "192.168.1.99:9014"
 // export http_proxy=http://192.168.1.99:9014
 // curl www.baidu.com
+```
 
 
 
@@ -53,7 +55,7 @@ url: http://202.118.65.2:80/app/login.html
 
 - gost -L=xxx -F=xxx -F=xxx
 - read param, -F/L/D -> options, routes=[options1, options2]
-- ```python
+- ```
     for route in routes:
         route.serve():
             chain = initChain():[chainNode1, chainNode2, ...]
