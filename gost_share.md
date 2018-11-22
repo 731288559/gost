@@ -1,5 +1,8 @@
 ## 端口转发：隐藏实际ip,端口号，内网穿透
+------
+
 ### 本地端口转发
+
 #### listen          192.168.1.99
 ```gost -L=tcp://:9011/202.118.65.2:80 [-F=...]```
 
@@ -13,10 +16,12 @@ A -> B , B -> C  ==>  A -> gost -> C    True
 
 #### listen          192.168.1.99
 ```gost -L=socks5://xiaoheihe:111111@:1234```
+
 #### proxy           172.17.0.4
 ```gost -L=socks5://forward:222222@:1234```
+
 #### gost
-```
+``` 
     gost -L=rtcp://:9017/202.118.65.2:80 
     -F=socks5://forward:222222@172.17.0.4:1234
     -F=socks5://xiaoheihe:111111@192.168.1.99:1234
@@ -29,7 +34,11 @@ A -> B , B -> C  ==>  A -> gost -> C    True
 url: http://202.118.65.2:80/app/login.html
 
 
-### 转发代理         科学上网
+### 转发代理: 科学上网
+------
+
+<img src="https://ginuerzh.github.io/images/gost_03.png" />
+
 #### proxy 1
 ```gost -L=:9016```
 
@@ -41,9 +50,10 @@ url: http://202.118.65.2:80/app/login.html
 
 #### host
 ```
-curl http://202.118.65.2:80/app/login.html -x "192.168.1.99:9014"
-// export http_proxy=http://192.168.1.99:9014
-// curl www.baidu.com
+    curl http://202.118.65.2:80/app/login.html -x "192.168.1.99:9014"
+    // export http_proxy=http://192.168.1.99:9014
+    // curl www.baidu.com
+
 ```
 
 
@@ -54,8 +64,10 @@ curl http://202.118.65.2:80/app/login.html -x "192.168.1.99:9014"
 
 
 
-- gost -L=xxx -F=xxx -F=xxx
-- read param, -F/L/D -> options, routes=[options1, options2]
+gost -L=xxx -F=xxx -F=xxx
+
+read param, -F/L/D -> options, routes=[options1, options2]
+
 - ```
     for route in routes:
         route.serve():
@@ -81,5 +93,4 @@ curl http://202.118.65.2:80/app/login.html -x "192.168.1.99:9014"
 
 
             
-
 
