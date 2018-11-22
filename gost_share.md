@@ -41,7 +41,7 @@ A -> B , B -> C  ==>  A -> gost -> C    True
 url: http://202.118.65.2:80/app/login.html
 
 
-### 转发代理: 科学上网
+## 转发代理: 科学上网
 ***
 
 <img src="https://ginuerzh.github.io/images/gost_03.png" />
