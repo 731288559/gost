@@ -54,16 +54,16 @@ curl http://202.118.65.2:80/app/login.html -x "192.168.1.99:9014"
 
 
 
-- 1.gost -L=xxx -F=xxx -F=xxx
-- 2.read param, -F/L/D -> options, routes=[options1, options2]
-- 3. ```
+- gost -L=xxx -F=xxx -F=xxx
+- read param, -F/L/D -> options, routes=[options1, options2]
+- ```
     for route in routes:
         route.serve():
             chain = initChain():[chainNode1, chainNode2, ...]
                 chainNode = parseChainNode():
                     Transport   -> Transporter
                     Protocol    -> Connector
-
+                    
             for ns in ServeNode:
                 node = ParseNode():
                     Transport   -> Listener(node.addr)
