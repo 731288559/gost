@@ -71,7 +71,7 @@ url: http://202.118.65.2:80/app/login.html
 
 ```
 
-
+------
 
 ### 协议类型(Protocols)
 
@@ -121,6 +121,8 @@ Server Name Indication  用来改善服务器与客户端 SSL 和 TLS 的一个�
     在Client Hello阶段，通过SNI扩展，将域名信息提前告诉服务器，服务器根据域名取得对应的证书返回给客户端已完成校验过程。
 ```
 #### forward - Forward
+
+------
 
 ### 传输类型(Transports)
 
