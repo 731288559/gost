@@ -79,19 +79,19 @@ url: http://202.118.65.2:80/app/login.html
 #### http - HTTP
 
 #### http2 - HTTP2  
-
+```
 http1.0 -> http1.1 : 持久连接，管道机制，分块传输编码，新增请求方式
 
 http1.1 -> http2.0 : 二进制协议，完全多路复用，报头压缩，服务器推送
 
 https = http + ssl/tls 
-
+```
 #### socks4 - SOCKS4 (2.4+)
 
 #### socks4a - SOCKS4A (2.4+)
 
 #### socks5 - SOCKS5
-
+```
 socks:      简单地传递数据包，不关心是何种应用协议，速度快
 
 socks4:     支持tcp
@@ -99,7 +99,7 @@ socks4:     支持tcp
 socks4a:    增加了域名解析,允许客户端指定目标域名而不是IP地址
 
 socks5:     支持tcp,udp,验证功能 
-
+```
 #### ss - Shadowsocks 
 <img src="https://tumutanzi.com/wp-content/uploads/2015/01/what-is-shadowsocks.png" />
 
