@@ -102,14 +102,14 @@ socks5:     支持tcp,udp,验证功能
 ```
 #### ss - Shadowsocks 
 <img src="https://tumutanzi.com/wp-content/uploads/2015/01/what-is-shadowsocks.png" />
-
+```
 ss-local 和 ss-server 两端通过多种可选的加密方法进行通讯，经过 GFW 的时候是常规的TCP包，没有明显的特征码而且 GFW 也无法对通讯数据进行解密
 
 通过流量混淆，隐秘解决了GFW通过分析流量特征从而干扰的问题
-
+```
 
 #### sni - SNI (2.5+)
-
+```
 Server Name Indication  用来改善服务器与客户端 SSL 和 TLS 的一个扩展
 
 主要解决一台服务器只能使用一个证书(一个域名)的缺点:
@@ -117,7 +117,7 @@ Server Name Indication  用来改善服务器与客户端 SSL 和 TLS 的一个�
     (当设置了SSL加密，服务器在读取HTTP请求里面的域名之前已经向客户端提交了证书，服务器不能决定呈现哪一个证书)
 
     在Client Hello阶段，通过SNI扩展，将域名信息提前告诉服务器，服务器根据域名取得对应的证书返回给客户端已完成校验过程。
-
+```
 #### forward - Forward
 
 传输类型(Transports)
@@ -128,15 +128,15 @@ Server Name Indication  用来改善服务器与客户端 SSL 和 TLS 的一个�
 
 #### tls - TLS (Secure Sockets Layer,SSL -> Transport Layer Security,TLS)
 <img src="https://img-blog.csdn.net/20161122222513728" />    
-
+```
 基于TCP, 解决：加密，完整性，认证
-
+```
 #### mtls - Multiplex TLS，在TLS上增加多路复用功能 (2.5+)
 
 #### ws - Websocket      
-
+```
 基于TCP，允许服务端直接向客户端推送数据而不需要客户端进行请求 解决：客户端推送时需要轮询，不停发送request
-
+```
 #### mws - Multiplex Websocket，在Websocket上增加多路复用功能 (2.5+)
 
 #### wss - Websocket Secure，基于TLS加密的Websocket
@@ -144,29 +144,29 @@ Server Name Indication  用来改善服务器与客户端 SSL 和 TLS 的一个�
 #### mwss - Multiplex Websocket Secure，在基于TLS加密的Websocket上增加多路复用功能 (2.5+)
 
 #### kcp - KCP (2.3+)    
-
+```
 基于UDP，快速可靠协议，能以比TCP浪费10%-20%的带宽的代价，换取平均延迟降低 30%-40%
-
+```
 #### quic - QUIC (2.4+)  
-
+```
 基于UDP，可靠，低等待时延(已连接过的情况下可无需握手，直接传送数据)，大胆的前向纠错方案（FEC包，纠错恢复）
-
+```
 #### ssh - SSH (2.4+)   
-
+```
 在不安全网络上提供安全远程登录及其它安全网络服务的协议
-
+```
 #### h2 - HTTP2 (2.4+)
 
 #### h2c - HTTP2 Cleartext (2.4+)  HTTP2明文
 
 #### obfs4 - OBFS4 (2.4+)    
-
+```
 obfs4proxy is a tool that attempts to circumvent censorship by transforming the Tor traffic                              between the client and the bridge.
 
 obfs4proxy是一种试图通过转换客户端和网桥之间的Tor流量来规避审查的工具。混淆流量，隐藏访问信息
 
 Tor, The onion route: 洋葱路由加密技术。匿名访问，防止追踪窃听
-
+```
 #### ohttp - HTTP Obfuscation (2.5+)
 
 
