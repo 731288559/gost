@@ -1,3 +1,5 @@
+# gost - GO Simple Tunnel
+
 科学上网,提高访问速度,隐藏真实IP,隐藏实际ip,端口号,内网穿透
 
 ## 端口转发：
@@ -71,7 +73,7 @@ url: http://202.118.65.2:80/app/login.html
 
 
 
-协议类型(Protocols)
+### 协议类型(Protocols)
 
 支持的协议类型有：
 
@@ -120,7 +122,7 @@ Server Name Indication  用来改善服务器与客户端 SSL 和 TLS 的一个�
 ```
 #### forward - Forward
 
-传输类型(Transports)
+### 传输类型(Transports)
 
 支持的传输类型有：
 
