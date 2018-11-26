@@ -1,6 +1,26 @@
 # gost - GO Simple Tunnel
 
-科学上网,提高访问速度,隐藏真实IP,隐藏实际ip,端口号,内网穿透
+### GO语言实现的安全隧道
+
+特性
+------
+
+* 多端口监听
+* 可设置转发代理，支持多级转发(代理链)
+* 支持标准HTTP/HTTPS/HTTP2/SOCKS4(A)/SOCKS5代理协议
+* [支持多种隧道类型](https://docs.ginuerzh.xyz/gost/configuration/)
+* [SOCKS5代理支持TLS协商加密](https://docs.ginuerzh.xyz/gost/socks/)
+* [Tunnel UDP over TCP](https://docs.ginuerzh.xyz/gost/socks/)
+* [TCP透明代理](https://docs.ginuerzh.xyz/gost/redirect/)
+* [本地/远程TCP/UDP端口转发](https://docs.ginuerzh.xyz/gost/port-forwarding/)
+* [支持Shadowsocks(TCP/UDP)协议](https://docs.ginuerzh.xyz/gost/ss/)
+* [支持SNI代理](https://docs.ginuerzh.xyz/gost/sni/)
+* [权限控制](https://docs.ginuerzh.xyz/gost/permission/)
+* [负载均衡](https://docs.ginuerzh.xyz/gost/load-balancing/)
+* [路由控制](https://docs.ginuerzh.xyz/gost/bypass/)
+* [DNS控制](https://docs.ginuerzh.xyz/gost/dns/)
+
+科学上网,提高访问速度,隐藏实际ip,端口号,内网穿透
 
 ## 端口转发：
 
