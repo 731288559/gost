@@ -129,7 +129,7 @@ Server Name Indication  用来改善服务器与客户端 SSL 和 TLS 的一个�
 - tls - TLS (Secure Sockets Layer,SSL -> Transport Layer Security,TLS)
 <img src="https://img-blog.csdn.net/20161122222513728" />    
 
-基于TCP, 解决：加密，完整性，认证
+-- 基于TCP, 解决：加密，完整性，认证
 
 - mtls - Multiplex TLS，在TLS上增加多路复用功能 (2.5+)
 
@@ -173,8 +173,11 @@ Tor, The onion route: 洋葱路由加密技术。匿名访问，防止追踪窃�
 
 
 [HTTP,HTTP/2,SPDY,HTTPS](http://www.alloyteam.com/2016/07/httphttp2-0spdyhttps-reading-this-is-enough/)
+
 [sni](https://blog.csdn.net/makenothing/article/details/53292335)
+
 [vpn](https://blog.csdn.net/xianjian1990/article/details/78980018)
+
 [GFW](https://cokebar.info/archives/253)
 
 
