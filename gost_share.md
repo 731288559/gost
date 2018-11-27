@@ -2,6 +2,8 @@
 
 ### GO语言实现的安全隧道
 
+安全隧道技术：通过将待传输的原始信息加密和协议封装处理后嵌套入另一种协议的数据包送入网络。
+
 特性
 ------
 
@@ -26,7 +28,7 @@
 
 ### 本地端口转发
 
-- listen          192.168.1.99
+- gost          (listen 192.168.1.99:9011)
 
 ```gost -L=tcp://:9011/202.118.65.2:80 [-F=...]```
 
@@ -42,15 +44,15 @@ A -> C                                  False
 
 A -> B , B -> C  ==>  A -> gost -> C    True
 
-- listen          192.168.1.99
+- be_listened         192.168.1.99
 
 ```gost -L=socks5://xiaoheihe:111111@:1234```
 
-- proxy           172.17.0.4
+- proxy         172.17.0.4
 
 ```gost -L=socks5://forward:222222@:1234```
 
-- gost
+- gost          (listen 192.168.1.99:9017)
 
 ``` 
     gost -L=rtcp://:9017/202.118.65.2:80 
@@ -100,12 +102,14 @@ url: http://202.118.65.2:80/app/login.html
 #### http - HTTP
 
 #### http2 - HTTP2  
+[HTTP,HTTP/2,SPDY,HTTPS](http://www.alloyteam.com/2016/07/httphttp2-0spdyhttps-reading-this-is-enough/)
 ```
 http1.0 -> http1.1 : 持久连接，管道机制，分块传输编码，新增请求方式
 
 http1.1 -> http2.0 : 二进制协议，完全多路复用，报头压缩，服务器推送
 
-https = http + ssl/tls 
+https = http + ssl/tls
+
 ```
 #### socks4 - SOCKS4 (2.4+)
 
@@ -117,7 +121,7 @@ socks:      简单地传递数据包，不关心是何种应用协议，速度�
 
 socks4:     支持tcp
 
-socks4a:    增加了域名解析,允许客户端指定目标域名而不是IP地址
+socks4a:    socks4的简单扩展,增加了域名解析,允许客户端指定目标域名而不是IP地址
 
 socks5:     支持tcp,udp,验证功能 
 ```
@@ -125,12 +129,12 @@ socks5:     支持tcp,udp,验证功能
 <img src="https://tumutanzi.com/wp-content/uploads/2015/01/what-is-shadowsocks.png" />
 
 ```
-ss-local 和 ss-server 两端通过多种可选的加密方法进行通讯，经过 GFW 的时候是常规的TCP包，没有明显的特征码而且 GFW 也无法对通讯数据进行解密
+ss-local 和 ss-server 两端通过多种可选的加密方法进行通讯，经过 [GFW](https://cokebar.info/archives/253) 的时候是常规的TCP包，没有明显的特征码而且 GFW 也无法对通讯数据进行解密
 
 通过流量混淆，隐秘解决了GFW通过分析流量特征从而干扰的问题
 ```
 
-#### sni - SNI (2.5+)
+#### sni - [SNI (2.5+)](https://blog.csdn.net/makenothing/article/details/53292335)
 ```
 Server Name Indication  用来改善服务器与客户端 SSL 和 TLS 的一个扩展
 
@@ -170,6 +174,8 @@ Server Name Indication  用来改善服务器与客户端 SSL 和 TLS 的一个�
 #### kcp - KCP (2.3+)    
 ```
 基于UDP，快速可靠协议，能以比TCP浪费10%-20%的带宽的代价，换取平均延迟降低 30%-40%
+
+在网络实时性和可靠性要求比较高的场景下可以考虑kcp协议代替tcp协议。
 ```
 #### quic - QUIC (2.4+)  
 ```
@@ -185,7 +191,7 @@ Server Name Indication  用来改善服务器与客户端 SSL 和 TLS 的一个�
 
 #### obfs4 - OBFS4 (2.4+)    
 ```
-obfs4proxy is a tool that attempts to circumvent censorship by transforming the Tor traffic                              between the client and the bridge.
+obfs4proxy is a tool that attempts to circumvent censorship by transforming the Tor traffic between the client and the bridge.
 
 obfs4proxy是一种试图通过转换客户端和网桥之间的Tor流量来规避审查的工具。混淆流量，隐藏访问信息
 
@@ -195,19 +201,10 @@ Tor, The onion route: 洋葱路由加密技术。匿名访问，防止追踪窃�
 
 
 
-
-[HTTP,HTTP/2,SPDY,HTTPS](http://www.alloyteam.com/2016/07/httphttp2-0spdyhttps-reading-this-is-enough/)
-
-[sni](https://blog.csdn.net/makenothing/article/details/53292335)
-
 [vpn](https://blog.csdn.net/xianjian1990/article/details/78980018)
 
-[GFW](https://cokebar.info/archives/253)
 
-
-
-
-
+------
 
 
 
